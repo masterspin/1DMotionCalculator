@@ -28,6 +28,24 @@ document.getElementById("plot").addEventListener("click", function() {
             }
         ]
     }
-});
-});
+})
+    velo = []
+    for (let i = 0; i < time.length; i++) {
+    velo[i] = iVel + (accel * time[i])
+    }
+    let velocity = new Chart(document.getElementById("velocity"), {
+    type: 'line',
+    data: {
+        labels: time,
+        datasets: [
+            { 
+            data: velo,
+            label: "Velocity",
+            borderColor: "#3e95cd",
+            fill: false
+            }
+        ]
+    }
+})
+})
 
