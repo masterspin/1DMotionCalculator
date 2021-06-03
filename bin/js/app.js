@@ -1,28 +1,19 @@
 document.getElementById("plot").addEventListener("click", function() {
-    var dist = document.getElementById("dist").value;
-    var iVel = document.getElementById("vel").value;
-    var accel = document.getElementById("accel").value;
+    let dist = document.getElementById("dist").value;
+    let iVel = document.getElementById("vel").value;
+    let accel = document.getElementById("accel").value;
 
-    var time = [];
+    let time = [0,1,2,3,4,5,6,7,8,9,10];
     
-    if (accel == 0){
-        MaxTime = dist / iVel;
-        time = [MaxTime * 0.2, MaxTime * 0.4, MaxTime * 0.6, MaxTime * 0.8, MaxTime];
-    }else if (accel > 0){
-        MaxTime = ((-1 * iVel) - Math.sqrt(iVel^2 + 2 * accel * dist)) / accel;
-        time = [MaxTime * 0.2, MaxTime * 0.4, MaxTime * 0.6, MaxTime * 0.8, MaxTime];
-    }else{
-        MaxTime = ((-1 * iVel) + Math.sqrt(iVel^2 + 2 * accel * dist)) / accel;
-        time = [MaxTime * 0.2, MaxTime * 0.4, MaxTime * 0.6, MaxTime * 0.8, MaxTime];
-    }
 
     pos = []
-    for (var i = 0; i < time.length; i++) {
-        pos[i] = (iVel * time[i]) + (0.5 * accel * (time[i] ^ 2));
+    for (let i = 0; i < time.length; i++) {
+        pos[i] = (iVel * time[i]) + ((0.5 * accel) * (time[i] ** 2)) +dist;
+        console.log(0.5 * accel)
         console.log("(" + time[i] + ", " + pos[i] + ")")
     };
 
-    var position = new Chart(document.getElementById("position"), {
+    let position = new Chart(document.getElementById("position"), {
     type: 'line',
     data: {
         labels: time,
