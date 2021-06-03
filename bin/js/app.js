@@ -4,8 +4,9 @@ document.getElementById("plot").addEventListener("click", function() {
     let accel = document.getElementById("accel").value;
 
     let time = [0,1,2,3,4,5,6,7,8,9,10];
-    dist ? dist: dist= 0
+    dist ? dist : dist= 0
     iVel ? iVel : iVel = 0
+    accel ? accel : accel = 0
 
     pos = []
     for (let i = 0; i < time.length; i++) {
