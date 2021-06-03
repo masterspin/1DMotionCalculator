@@ -8,25 +8,26 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/button.css">
   <link rel="shortcut icon" href="https://img.icons8.com/fluent/48/000000/valorant.png"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <title>EPIC MECH PROJECT - One Dimensional Motion</title>
 </head>
 
 <body>
   <header>
-    <!-- <h1>Final Grade Calculator</h1> -->
+
     <center><img src="static/logo2.png" width="60%"></center>
     <h2>EPIC MECH PROJECT - One Dimensional Motion</p><br><h2>
   </header>
 
           <center><section><i><h3>
-            <!-- <label>Current Grade (%)</label><br> -->
-            <input type="number" class="position form__field" placeholder="Enter Initial Position" name="#" id='name' required/><br><br><br>
-            <!-- <label>Desired Grade (%)</label><br> -->
-            <input type="number" class="velocity form__field" placeholder="Enter Initial Velocity" name="#" id='name' required/><br><br><br>
-            <!-- <label>Weight of Final Exam (%)</label><br> -->
-            <input type="number" class="acceleration form__field" placeholder="Enter Acceleration" name="#" id='name' required/><br><br><br><br>
 
-            <button type="button submit"  class="primary generateBtn">
+            <input type="number" class="position form__field" placeholder="Enter Displacement (in units of distance)" name="#" id='dist' required/><br><br><br>
+
+            <input type="number" class="velocity form__field" placeholder="Enter Initial Velocity (in units / time)" name="#" id='vel' required/><br><br><br>
+          
+            <input type="number" class="acceleration form__field" placeholder="Enter Acceleration (in units / time^2)" name="#" id='accel' required/><br><br><br><br>
+
+            <button type="button submit"  class="primary generateBtn" id="plot">
               <div class="label">
                 <span class="hover-effect"></span>
                 <b><span class="label-text">SUBMIT</span></b>
@@ -34,11 +35,12 @@
             </button>
           </h3></i></section>
 
-  <!-- <div>
-    <h1 class="randomNumEl"></h1>
-  </div>
-  <script src="app.js"></script> -->
+
 </body>
+<div class="chart-container" style="position: relative; height:40vh; width:40vw">
+  <canvas id="position"></canvas>
+  <script src = "js/app.js"></script>
+</div>
 <br>
 <br>
 <br>
