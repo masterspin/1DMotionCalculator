@@ -4,17 +4,24 @@ document.getElementById("plot").addEventListener("click", function() {
     let accel = document.getElementById("accel").value;
 
     let time = [0,1,2,3,4,5,6,7,8,9,10];
-    dist ? dist : dist= 0
-    iVel ? iVel : iVel = 0
-    accel ? accel : accel = 0
+    dist ? dist : dist= 0.0
+    iVel ? iVel : iVel = 0.0
+    accel ? accel : accel = 0.0
 
     pos = []
     for (let i = 0; i < time.length; i++) {
-        pos[i] = (iVel * time[i]) + ((0.5 * accel) * (time[i] ** 2))
+        pos[i] = (iVel * time[i]) + ((0.5 * accel) * (time[i] ** 2.0))
         console.log("(" + time[i] + ", " + pos[i] + ")")
     };
     console.log(dist)
-    let posi = pos.map(x => parseInt(x))
+    let posi = pos.map(x => parseFloat(x))
+
+    const fVel =  Math.sqrt((iVel**2.0)+(2.0*accel*dist));
+    dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
+    eTime = "Time: " + dTime + " seconds";
+
+    const timeX = document.querySelector(".timeX");
+    timeX.innerHTML = eTime;
 
 
     let position = new Chart(document.getElementById("position"), {
@@ -33,7 +40,7 @@ document.getElementById("plot").addEventListener("click", function() {
 });
 velo = []
     for (let i = 0; i < time.length; i++) {
-    velo[i] = parseInt(iVel) + (parseInt(accel) * time[i])
+    velo[i] = parseFloat(iVel) + (parseFloat(accel) * time[i])
     }
     let velocity = new Chart(document.getElementById("velocity"), {
     type: 'line',
@@ -67,4 +74,9 @@ acce = []
         ]
     }
 });
+// const dist = document.querySelector(".position").value;
+// const iVel = document.querySelector(".velocity").value;
+// const accel = document.querySelector(".acceleration").value;
+
+
 });
