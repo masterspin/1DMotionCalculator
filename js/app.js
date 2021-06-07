@@ -36,6 +36,11 @@ document.getElementById("plot").addEventListener("click", function() {
 
     const timeX = document.querySelector(".timeX");
     timeX.innerHTML = eTime;
+    
+    var eVel = "Final velocity: " + fVel + "";
+
+    const velX = document.querySelector(".velX");
+    velX.innerHTML = eVel;
 
 
     let position = new Chart(document.getElementById("position"), {
