@@ -21,8 +21,8 @@ document.getElementById("plot").addEventListener("click", function() {
     let dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
     
     if (dTime<0) {
-        let fVel = -fVel;
-        let dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
+        fVel = -fVel;
+        dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
     }
     
     var eTime = "Time it takes for displacement to occur: " + dTime + " seconds";
