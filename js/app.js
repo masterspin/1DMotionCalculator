@@ -16,6 +16,8 @@ document.getElementById("plot").addEventListener("click", function() {
     console.log(dist)
     let posi = pos.map(x => parseFloat(x))
     
+    let fVel = 0;
+    
     if (iVel < 0){
         let fVel =  Math.sqrt((-1*iVel**2.0)+(2.0*-1*accel*dist));
     }
