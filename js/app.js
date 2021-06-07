@@ -20,7 +20,7 @@ document.getElementById("plot").addEventListener("click", function() {
     
     let dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
     
-    let nVel = -1.0*fVel
+    let nVel = Math.sqrt((-1*iVel**2.0)-(2.0*accel*dist))
     
     if (dTime<0) {
         let dTime = Math.round(1000*(nVel-iVel)/accel)/1000
