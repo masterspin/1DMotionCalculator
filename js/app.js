@@ -30,7 +30,7 @@ document.getElementById("plot").addEventListener("click", function() {
     const timeX = document.querySelector(".timeX");
     timeX.innerHTML = eTime;
     
-    fVel = Math.round(1000*(fVel)/1000)
+    fVel = fVel.toFixed(3)
     
     var eVel = "Final velocity after displacement occurs: " + fVel + "";
 
