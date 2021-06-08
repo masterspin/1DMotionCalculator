@@ -32,7 +32,7 @@ document.getElementById("plot").addEventListener("click", function() {
     const timeX = document.querySelector(".timeX");
     timeX.innerHTML = eTime;
     
-    let dVel = Math.round(1000*(fVel)/accel)/1000
+    let dVel = Math.round(1000*(fVel))/1000
     
     var eVel = "Final velocity after displacement occurs: " + dVel + " meters per second";
 
@@ -47,7 +47,7 @@ document.getElementById("plot").addEventListener("click", function() {
         datasets: [
             {
             data: posi,
-            label: "Displacement",
+            label: "Position",
             borderColor: "#3e95cd",
             fill: false
             }
