@@ -2,15 +2,17 @@ document.getElementById("plot").addEventListener("click", function() {
     let dist = document.getElementById("dist").value;
     let iVel = document.getElementById("vel").value;
     let accel = document.getElementById("accel").value;
+    let initi = document.getElementById("initial").value;
 
     let time = [0,1,2,3,4,5,6,7,8,9,10];
     dist ? dist : dist= 0.0
+    initi ? initi : initi = 0.0
     iVel ? iVel : iVel = 0.0
     accel ? accel : accel = 0.0
 
     pos = []
     for (let i = 0; i < time.length; i++) {
-        pos[i] = (iVel * time[i]) + ((0.5 * accel) * (time[i] ** 2.0))
+        pos[i] = (iVel * time[i]) + ((0.5 * accel) * (time[i] ** 2.0) + initi)
         console.log("(" + time[i] + ", " + pos[i] + ")")
     };
     console.log(dist)
