@@ -34,7 +34,7 @@ document.getElementById("plot").addEventListener("click", function() {
     
     let dVel = Math.round(1000*(fVel)/accel)/1000
     
-    var eVel = "Final velocity after displacement occurs: " + dVel + "meters per second";
+    var eVel = "Final velocity after displacement occurs: " + dVel + " meters per second";
 
     const velX = document.querySelector(".velX");
     velX.innerHTML = eVel;
