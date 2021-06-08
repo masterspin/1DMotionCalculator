@@ -29,6 +29,13 @@ document.getElementById("plot").addEventListener("click", function() {
 
     const timeX = document.querySelector(".timeX");
     timeX.innerHTML = eTime;
+    
+    fVel = Math.round(1000*(fVel)/1000)
+    
+    var eVel = "Final velocity after displacement occurs: " + fVel + "";
+
+    const velX = document.querySelector(".velX");
+    velX.innerHTML = eVel;
 
 
     let position = new Chart(document.getElementById("position"), {
