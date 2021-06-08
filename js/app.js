@@ -12,11 +12,11 @@ document.getElementById("plot").addEventListener("click", function() {
 
     pos = []
     for (let i = 0; i < time.length; i++) {
-        pos[i] = (iVel * time[i]) + ((0.5 * accel) * (time[i] ** 2.0) + initi)
+        pos[i] = (iVel * time[i]) + ((0.5 * accel) * (time[i] ** 2.0))
         console.log("(" + time[i] + ", " + pos[i] + ")")
     };
     console.log(dist)
-    let posi = pos.map(x => parseFloat(x))
+    let posi = pos.map(x => parseFloat(x) + parseFloat(initi))
     
     let fVel =  Math.sqrt((iVel**2.0)+(2.0*accel*dist));
     
